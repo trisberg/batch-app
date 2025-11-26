@@ -4,7 +4,7 @@ import com.springdeveloper.batch.model.Person;
 import com.springdeveloper.batch.model.Results;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
 
 public class DataItemProcessor implements ItemProcessor<Person, Results> {
 
