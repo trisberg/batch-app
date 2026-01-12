@@ -5,12 +5,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.0</version>
+		<version>4.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.springdeveloper.batch</groupId>
 	<artifactId>batch-app</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.2-NOJDBC</version>
 	<name>batch-app</name>
 	<description>Demo project for Spring Boot Batch</description>
 	<url/>

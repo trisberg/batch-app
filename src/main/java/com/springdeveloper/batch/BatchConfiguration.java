@@ -3,7 +3,7 @@ package com.springdeveloper.batch;
 import com.springdeveloper.batch.model.Person;
 import com.springdeveloper.batch.model.Results;
 
-import org.springframework.batch.core.configuration.support.JdbcDefaultBatchConfiguration;
+import org.springframework.batch.core.configuration.support.DefaultBatchConfiguration;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;
@@ -15,13 +15,15 @@ import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemRe
 import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemWriterBuilder;
 import org.springframework.batch.infrastructure.item.file.transform.BeanWrapperFieldExtractor;
 import org.springframework.batch.infrastructure.item.file.transform.DelimitedLineAggregator;
+import org.springframework.cloud.task.configuration.EnableTask;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 
+@EnableTask
 @Configuration
-public class BatchConfiguration extends JdbcDefaultBatchConfiguration {
+public class BatchConfiguration extends DefaultBatchConfiguration {
     @Bean
     public FlatFileItemReader<Person> reader() {
         return new FlatFileItemReaderBuilder<Person>()
