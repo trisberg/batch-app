@@ -20,6 +20,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableTask
@@ -66,10 +67,11 @@ public class BatchConfiguration extends JdbcDefaultBatchConfiguration {
     }
 
     @Bean
-    public Step step1(JobRepository jobRepository, FlatFileItemReader<Person> reader,
-            DataItemProcessor processor, FlatFileItemWriter<Results> writer) {
+    public Step step1(JobRepository jobRepository, FlatFileItemReader<Person> reader, DataItemProcessor processor,
+            FlatFileItemWriter<Results> writer, PlatformTransactionManager transactionManager) {
         return new StepBuilder("step1", jobRepository)
                 .<Person, Results>chunk(3)
+                .transactionManager(transactionManager)
                 .reader(reader)
                 .processor(processor)
                 .writer(writer)
