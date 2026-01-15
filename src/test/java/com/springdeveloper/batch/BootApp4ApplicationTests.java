@@ -5,8 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(properties = {
     "spring.batch.jdbc.initialize-schema=always",
-    "spring.batch.job.enabled=false"
-})
+    "spring.batch.job.enabled=true"})
 class BootApp4ApplicationTests {
 
 	@Test

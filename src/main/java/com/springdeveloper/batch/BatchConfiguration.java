@@ -23,7 +23,8 @@ import org.springframework.core.io.FileSystemResource;
 
 @Configuration
 @EnableTask
-public class BatchConfiguration extends JdbcDefaultBatchConfiguration {
+public class BatchConfiguration {
+
     @Bean
     public FlatFileItemReader<Person> reader() {
         return new FlatFileItemReaderBuilder<Person>()
