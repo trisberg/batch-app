@@ -19,8 +19,8 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
-public class BatchConfiguration
-{
+public class BatchConfiguration {
+
     @Bean
     public FlatFileItemReader<Person> reader() {
         return new FlatFileItemReaderBuilder<Person>()
