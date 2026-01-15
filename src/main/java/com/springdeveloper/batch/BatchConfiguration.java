@@ -3,7 +3,6 @@ package com.springdeveloper.batch;
 import com.springdeveloper.batch.model.Person;
 import com.springdeveloper.batch.model.Results;
 
-import org.springframework.batch.core.configuration.support.JdbcDefaultBatchConfiguration;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.job.builder.JobBuilder;
@@ -24,7 +23,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 @EnableTask
-public class BatchConfiguration extends JdbcDefaultBatchConfiguration {
+public class BatchConfiguration {
     @Bean
     public FlatFileItemReader<Person> reader() {
         return new FlatFileItemReaderBuilder<Person>()
